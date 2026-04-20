@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+<body>
+    <h1>All Posts</h1>
+    {% for post in posts %}
+        <article>
+            <a href="{{ url_for('post_page', post_id=post.id) }}">{{ post['title'] }}</a>
+            <p>{{ post['content'] }}</p>
+        </article>
+    {% else %}
+        <p>No posts found.</p>
+    {% endfor %}
+</body>
+</html>
